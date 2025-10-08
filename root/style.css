@@ -1,0 +1,84 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 50px;
+    background-color: #FF4900;
+}
+nav > a.elementmenu {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000000;
+    transition: color 1s;
+}
+nav > a.elementmenu:hover {
+    transition: color 1s;
+    color: #1B1BB3;
+}
+nav > div.pageLangs {
+    display: flex;
+    flex-direction: row;
+}
+nav > div.pageLangs > a > img {
+    display: flex;
+    margin: 3px;
+    width: 3em;
+    height: 2em;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 100%;
+    background-color: #FF4900;
+}
+footer > div > p {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 20px;
+    color: #000000;
+    transition: color 1s;
+}
+footer > div > p:hover {
+    transition: color 1s;
+    color: #1B1BB3;
+}
+
+h1 {
+    margin: 10px;
+    font-size: 40px;
+    text-align: center;
+}
+h2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 35px;
+    text-align: center;
+}
+hr.border {
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+}
