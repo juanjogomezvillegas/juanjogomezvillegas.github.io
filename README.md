@@ -21,4 +21,4 @@ Juan José Gómez Villegas (u1987338@campus.udg.edu)
 
 ### Link to the Figma project
 
-- ![https://www.figma.com/design/YGOC9lM9Tta7ZaZxtGI4Wu/P2_Hypermedia-project?t=SjOC2SzUwO2ZLg7A-1](Link to the Figma project)
+- [Link to the Figma project](https://www.figma.com/design/YGOC9lM9Tta7ZaZxtGI4Wu/P2_Hypermedia-project?t=SjOC2SzUwO2ZLg7A-1)
