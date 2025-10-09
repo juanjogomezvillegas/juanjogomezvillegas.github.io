@@ -1,68 +1,74 @@
 
+:root{
+   --black: #000000;
+   --white: #ffffff;
+   --gray: #898989;
+   --colorPrimary: #00206F;
+}
+
 * {
     margin: 0;
     padding: 0;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
 }
-body {
-    display: flex;
-    flex-direction: column;
-}
 
-nav {
-    position: fixed;
-    top: 0;
-    z-index: 10;
+header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 50px;
-    width: 100%;
-    height: 50px;
-    background-color: #FF4900;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: var(--colorPrimary);
 }
-nav > a.elementmenu {
-    font-size: 20px;
-    text-decoration: none;
-    color: #000000;
-    transition: color 1s;
-}
-nav > a.elementmenu:hover {
-    transition: color 1s;
-    color: #1B1BB3;
-}
-nav > div.pageLangs {
-    display: flex;
-    flex-direction: row;
-}
-nav > div.pageLangs > a > img {
-    display: flex;
-    margin: 3px;
+header img {
+    margin: 2px;
     width: 3em;
     height: 2em;
 }
 
-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 20px;
-    width: 100%;
-    background-color: #FF4900;
-}
-footer > div > p {
+nav {
     display: flex;
     justify-content: center;
+    background-color: var(--colorPrimary);
+}
+nav a {
+    margin-left: 5px;
+    padding: 10px;
+    color: var(--white);
+    font-size: 20px;
+    text-decoration: none;
+    transition: all .5s;
+}
+nav a:hover {
+    background-color: var(--white);
+    color: var(--colorPrimary);
+    transition: all .5s;
+}
+
+footer a {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--colorPrimary);
+    color: var(--white);
+    box-shadow: 0px 0px 3px 3px var(--gray);
+    text-decoration: none;
+    transition: all .5s;
+}
+footer a:hover {
+    transform: scale(1.1) rotate(360deg);
+    box-shadow: 0px 0px 10px 5px var(--gray);
+    transition: all .5s;
+}
+footer div {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: var(--colorPrimary);
+}
+footer div > p {
     padding: 20px;
     font-size: 20px;
-    color: #000000;
-    transition: color 1s;
-}
-footer > div > p:hover {
-    transition: color 1s;
-    color: #1B1BB3;
+    color: var(--white);
 }
 
 h1 {
@@ -71,14 +77,11 @@ h1 {
     text-align: center;
 }
 h2 {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 10px;
     font-size: 35px;
     text-align: center;
 }
 hr.border {
-    margin-top: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: 1px solid black;
+    margin: 30px 20px 30px 20px;
+    border: 1px solid var(--gray);
 }
