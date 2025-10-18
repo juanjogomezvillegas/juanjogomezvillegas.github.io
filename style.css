@@ -4,12 +4,13 @@
    --white: #ffffff;
    --gray: #898989;
    --colorPrimary: #00206F;
+   --colorSecondary: #0132AE;
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -19,10 +20,14 @@ header {
     padding: 10px;
     background-color: var(--colorPrimary);
 }
-header img {
-    margin: 2px;
-    width: 3em;
-    height: 2em;
+
+header > select {
+    width: 150px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 17px;
+    background-color: var(--white);
+    color: var(--black);
 }
 
 nav {
@@ -30,22 +35,87 @@ nav {
     justify-content: center;
     background-color: var(--colorPrimary);
 }
+
 nav a {
     margin-left: 5px;
     padding: 10px;
     color: var(--white);
-    font-size: 20px;
+    font-size: 17px;
     text-decoration: none;
     transition: all .5s;
 }
+
 nav a:hover {
     background-color: var(--white);
     color: var(--colorPrimary);
     transition: all .5s;
 }
 
-footer a {
+div#container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+div#container > aside {
+    grid-area: 1 / 1 / 6 / 2;
+    padding: 10px 20px 10px 20px;
+    background-color: var(--colorSecondary);
+}
+
+div#container > div#middle {
+    grid-area: 1 / 2 / 6 / 4;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;
+}
+
+div#container > div#middle > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer {
+    padding: 10px;
+    background-color: var(--colorPrimary);
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+}
+footer div > p {
+    padding: 10px;
+    font-size: 17px;
+    color: var(--white);
+}
+
+h1 {
     margin: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+h2 {
+    margin: 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
+hr.border {
+    margin: 30px 20px 30px 20px;
+    border: 1px solid var(--gray);
+}
+
+div#goToTop {
+    margin: 10px;
+    float: right;
+}
+
+div#goToTop > a {
     padding: 10px;
     border-radius: 20px;
     background-color: var(--colorPrimary);
@@ -54,34 +124,8 @@ footer a {
     text-decoration: none;
     transition: all .5s;
 }
-footer a:hover {
+div#goToTop > a:hover {
     transform: scale(1.1) rotate(360deg);
     box-shadow: 0px 0px 10px 5px var(--gray);
     transition: all .5s;
-}
-footer div {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    background-color: var(--colorPrimary);
-}
-footer div > p {
-    padding: 20px;
-    font-size: 20px;
-    color: var(--white);
-}
-
-h1 {
-    margin: 10px;
-    font-size: 40px;
-    text-align: center;
-}
-h2 {
-    margin: 10px;
-    font-size: 35px;
-    text-align: center;
-}
-hr.border {
-    margin: 30px 20px 30px 20px;
-    border: 1px solid var(--gray);
 }

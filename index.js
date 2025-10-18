@@ -1,5 +1,6 @@
 
 class Person {
+    // attributes
     #name;
     #birthplace;
     #birthyear;
@@ -8,7 +9,7 @@ class Person {
     #mobile;
     #tel;
     #mail;
-
+    // constructor
     constructor(name, birthplace, birthyear, residence, postalCode, mobile, tel, mail) {
         this.#name = name;
         this.#birthplace = birthplace;
@@ -19,6 +20,7 @@ class Person {
         this.#tel = tel;
         this.#mail = mail;
     }
+    // methods
     getName() {
         return this.#name;
     }
@@ -40,21 +42,49 @@ class Person {
     }
 }
 
+// Store my information in object juanjo of type Person
 const juanjo = new Person("Juan José Gómez Villegas", "Figueres, Girona", 2001, "Figueres", 17600, "674 979 133", "972 671 123", "juanjogomvil@gmail.com");
 
-window.onload = function() {
-    document.title = "Currículum, Juan José Gómez villegas";
+/*
+* run code on load page
+*/
+window.onload = function() {    
+    document.title = "Currículum Juan José Gómez villegas";
     catalan();
 
-    document.getElementById("changeCatalan").addEventListener("click", catalan);
-    document.getElementById("changeSpanish").addEventListener("click", spanish);
-    document.getElementById("changeEnglish").addEventListener("click", english);
-    document.getElementById("changeFrench").addEventListener("click", french);
+    document.getElementById("selChangeLang").addEventListener("change", selectLanguage);
 }
 
+/*
+* show select value, to change language
+*/
+function selectLanguage() {
+    const lang = document.getElementById("selChangeLang").value;
+
+    switch (lang) {
+        case "ca":
+            catalan();
+            break;
+        case "es":
+            spanish();
+            break;
+        case "en":
+            english();
+            break;
+        case "fr":
+            french();
+            break;
+        default:
+            console.log("error");
+    }
+}
+
+/*
+* change language to catalan
+*/
 function catalan() {
     icon("images/img3.png");
-    itemsNavAndTitles(["Informació Personal","Estudis","Experiència","Aficions","Habilitats","Referències","Projectes","Idiomes"]);
+    itemsNavAndTitles(["Informació Personal","Idiomes","Estudis","Experiència","Aficions","Habilitats","Projectes","Referències"]);
 
     writeContent("contentPersonalInfo", `<ul>
             <li><b>Nom i Cognom:</b> ${ juanjo.getName() }</li>
@@ -66,9 +96,12 @@ function catalan() {
         </ul>`);
 }
 
+/*
+* change language to spanish
+*/
 function spanish() {
     icon("images/img2.png");
-    itemsNavAndTitles(["Información Personal","Estudios","Experiencia","Aficiones","Habilidades","Referencias","Proyectos","Idiomas"]);
+    itemsNavAndTitles(["Información Personal","Idiomas","Estudios","Experiencia","Aficiones","Habilidades","Proyectos","Referencias"]);
 
     writeContent("contentPersonalInfo", `<ul>
             <li><b>Nombre i Apellidos:</b> ${ juanjo.getName() }</li>
@@ -80,9 +113,12 @@ function spanish() {
         </ul>`);
 }
 
+/*
+* change language to english
+*/
 function english() {
     icon("images/img5.png");
-    itemsNavAndTitles(["Personal Information","Studies","Experience","Hobbies","Skills","References","Projects","Languages"]);
+    itemsNavAndTitles(["Personal Information","Languages","Studies","Experience","Hobbies","Skills","Portfolio","References"]);
 
     writeContent("contentPersonalInfo", `<ul>
             <li><b>Name and Surname:</b> ${ juanjo.getName() }</li>
@@ -94,9 +130,12 @@ function english() {
         </ul>`);
 }
 
+/*
+* change language to french
+*/
 function french() {
     icon("images/img4.png");
-    itemsNavAndTitles(["Information personnel","Études","Expérience","Loisirs","Compétences","Références","Projets","Langues"]);
+    itemsNavAndTitles(["Information personnel","Langues","Études","Expérience","Loisirs","Compétences","Portefeuille","Références"]);
 
     writeContent("contentPersonalInfo", `<ul>
             <li><b>Nom et prénom:</b> ${ juanjo.getName() }</li>
@@ -108,13 +147,19 @@ function french() {
         </ul>`);
 }
 
+/*
+* change icon the page
+*/
 function icon(img) {
     document.getElementById("currentLanguage").href = img;
 }
 
+/*
+* establish titles in navbar
+*/
 function itemsNavAndTitles(items) {
     let idsItemNav = document.getElementById("menu").getElementsByClassName("elementmenu");
-    let idsTitles = ["personalInfo","studies","experience","hobbies","skills","references","portfolio","languages"];
+    let idsTitles = ["personalInfo","languages","studies","experience","hobbies","skills","portfolio","references"];
 
     for (i = 0; i < idsItemNav.length; i++) {
         writeItemNav(items[i], idsItemNav[i].id);
@@ -125,10 +170,16 @@ function itemsNavAndTitles(items) {
     }
 }
 
+/*
+* write item the navbar
+*/
 function writeItemNav(item, id) {
     document.getElementById(id).textContent = item;
 }
 
+/*
+* write content located in element id
+*/
 function writeContent(id, content) {
     document.getElementById(id).innerHTML = content;
 }

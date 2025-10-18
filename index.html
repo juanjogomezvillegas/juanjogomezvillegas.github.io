@@ -18,174 +18,136 @@
     <body>
         <div id="top">
             <header>
-                <div class="pageLangs">
-                    <select name="" id="">
-                        <option value="ca">Català</option>
-                        <option value="es">Español</option>
-                        <option value="en">English</option>
-                        <option value="fr">Français</option>
-                    </select>
-                    
-                    <!--<a id="changeCatalan"><img src="images/img3.png"></a>
-                    <a id="changeSpanish"><img src="images/img2.png"></a>
-                    <a id="changeEnglish"><img src="images/img5.png"></a>
-                    <a id="changeFrench"><img src="images/img4.png"></a>-->
-                </div>
+                <select name="changeLang" id="selChangeLang">
+                    <option value="ca">Català</option>
+                    <option value="es">Castellano</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                </select>
             </header>
             <nav id="menu">
                 <a class="elementmenu" id="itemPersInfo" href="#personalInfo">Personal Information</a>
+                <a class="elementmenu" id="itemLang" href="#languages">Languages</a>
                 <a class="elementmenu" id="itemStudies" href="#studies">Studies</a>
                 <a class="elementmenu" id="itemExp" href="#experience">Experience</a>
                 <a class="elementmenu" id="itemHobbies" href="#hobbies">Hobbies</a>
                 <a class="elementmenu" id="itemSkill" href="#skills">Skills</a>
-                <a class="elementmenu" id="itemRef" href="#references">References</a>
                 <a class="elementmenu" id="itemPortfolio" href="#portfolio">Portfolio</a>
-                <a class="elementmenu" id="itemLang" href="#languages">Languages</a>
+                <a class="elementmenu" id="itemRef" href="#references">References</a>
             </nav>
         </div>
         <div id="container">
-            <section id="personalInfo">
+            <aside>
+                <img src="" alt="image">
+                <br />
+                <section id="personalInfo">
+                    <article>
+                        <h2>Personal Information</h2>
+                        <div id="contentPersonalInfo">
+                            <ul>
+                                <li><b>Name and Surname:</b> ...</li>
+                                <li><b>Place and Year of Birth:</b> ...</li>
+                                <li><b>Residence and Postal Code:</b> ...</li>
+                                <li><b>Mobile:</b> <a href="tel:">...</a></li>
+                                <li><b>Phone:</b> <a href="tel:">...</a></li>
+                                <li><b>Email:</b> <a href="mailto:">...</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+                <section id="languages">
+                    <article>
+                        <h2>Languages</h2>
+                        <ul>
+                            <li>Català</li>
+                            <li>Castellano</li>
+                            <li>English</li>
+                            <li>Français</li>
+                        </ul>
+                    </article>
+                </section>
+            </aside>
+            
+            <div id="middle">
+                <section id="studies">
+                    <article>
+                        <h2>Studies</h2>
+                        <div id="contentStudies">
+                            <ol type="1">
+                                <li>Primaria en el col·legi C.E.I.P Joaquim Cusí i Fortunet, Figueres. <span>september 2004 - june 2013</span></li>
+                                <li>Títol de ESO en el institut Olivar Gran, Figueres. <span>september 2013 - june 2017</span></li>
+                                <li>Títol de CFGM de Sistemes Microinformàtics i Xarxes en el institut Cendrassos, Figueres. <span>september 2017 - june 2020</span></li>
+                                <li>Títol de CFGS de Desenvolupament d'Aplicacions Web en el institut Cendrassos, Figueres. <span>september 2020 - june 2022</span></li>
+                                <li>Actualment estudiant el grau d'Enginyeria Informàtica a la Universitat de Girona. <span>july 2022 - ?</span></li>
+                            </ol>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="experience">
+                    <article>
+                        <h2>Experience</h2>
+                        <div id="contentExperience">
+                            <ol type="1">
+                                <li>Pràctiques de CFGM al departament d'informàtica del Consell Comarcal de l'Alt Empordà, Figueres. <span>2019-10-14 - 2020-02-20</span></li>
+                                <li>Pràctiques de CFGS a l'empresa Apliemporda, Figueres. <span>2021-11-22 - 2022-04-20</span></li>
+                            </ol>
+                        </div>
+                    </article>
+                </section>
+
                 <div>
-                    <img src="" alt="image">
+                    <section id="hobbies">
+                        <article>
+                            <h2>Hobbies</h2>
+                            <div id="contentHobbies">
+                                //
+                            </div>
+                        </article>
+                    </section>
+                    
+                    <section id="skills">
+                        <article>
+                            <h2>Skills</h2>
+                            <div id="contentSkills">
+                                //
+                            </div>
+                        </article>
+                    </section>
                 </div>
-                <article>
-                    <h2>Personal Information</h2>
-                    <div id="contentPersonalInfo"></div>
-                </article>
-            </section>
-            
-            <hr class="border" />
-            
-            <section id="studies">
-                <article>
-                    <h2>Studies</h2>
-                    <div></div>
-                </article>
-            </section>
-                        
-            <hr class="border" />
-            
-            <section id="experience">
-                <article>
-                    <h2>Experience</h2>
-                    <div></div>
-                </article>
-            </section>
-                        
-            <hr class="border" />
-            
-            <section id="hobbies">
-                <article>
-                    <h2>Hobbies</h2>
-                    <div></div>
-                </article>
-            </section>
-                        
-            <hr class="border" />
-            
-            <section id="skills">
-                <article>
-                    <h2>Skills</h2>
-                    <div></div>
-                </article>
-            </section>
-                        
-            <hr class="border" />
-            
-            <section id="references">
-                <article>
-                    <h2>References</h2>
-                    <div></div>
-                </article>
-            </section>
-                        
-            <hr class="border" />
-            
-            <section id="portfolio">
-                <article>
-                    <h2>Portfolio</h2>
-                    <div></div>
-                </article>
-            </section>
-                        
-            <hr class="border" />
-            
-            <section id="languages">
-                <article>
-                    <h2>Languages</h2>
-                    <div></div>
-                </article>
-            </section>
+
+                <section id="portfolio">
+                    <article>
+                        <h2>Portfolio</h2>
+                        <div id="contentPortfolio">
+                            <ol>
+                                <li></li>
+                            </ol>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="references">
+                    <article>
+                        <h2>References</h2>
+                        <div id="contentReferences">
+                            <ol>
+                                <li></li>
+                            </ol>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+        <div id="goToTop">
+            <a href="#top" class="fa fa-arrow-up"></a>
         </div>
         <footer>
-            <a href="#top" class="fa fa-arrow-up"></a>
-            <br />
             <div>
                 <p>Juan José Gómez Villegas &copy; 2025</p>
             </div>
         </footer>
-        <!--
-        <article class="article1">
-            <div class="imatgediv">
-                <img src="imatges/img1.jpg" class="imatge">
-            </div>
-            <div class="informaciodiv">
-                <h2 id="informacio">Informació Personal</h2>
-                <div>
-                    <p><i class="fa fa-user"></i><span>Nom i Cognom: </span>Juan José Gómez Villegas</p>
-                    <p><i class="fa fa-building"></i><span>Lloc i Any de Naixement: </span>Figueres, Girona, 2001</p>
-                    <p><i class="fa fa-home"></i><span>Residència i Codi Postal: </span>Figueres, 17600</p>
-                    <p><i class="fa fa-mobile"></i><span>Mòbil: </span><a href="tel:674 979 133">674 979 133</a></p>
-                    <p><i class="fa fa-phone"></i><span>Telèfon: </span><a href="tel:972 671 123">972 671 123</a></p>
-                    <p><i class="fa fa-envelope"></i><span>Correu Electrònic: </span><a href="mailto:juanjogomvil@gmail.com">juanjogomvil@gmail.com</a></p>
-                </div>
-        </article>
-        
-        <hr class="border">
-
-        <article class="article2">
-            <h2 id="idiomes">Idiomes</h2>
-            <ol type="1">
-                <li>Català</li>
-                <li>Espanyol</li>
-                <li>Anglès</li>
-                <li>Francès</li>
-            </ol>
-        </article>
-
-        <hr class="border">
-        
-        <article class="article2">
-            <h2 id="estudis">Estudis</h2>
-            <ol type="1">
-                <li>Primaria en el col·legi C.E.I.P Joaquim Cusí i Fortunet, Figueres. <span>2004-2013</span></li>
-                <li>Títol de ESO en el institut Olivar Gran, Figueres. <span>2013-2017</span></li>
-                <li>Títol de CFGM de Sistemes Microinformàtics i Xarxes en el institut Cendrassos, Figueres. <span>2017-2020</span></li>
-                <li>Actualment cursant CFGS de Desenvolupament d'Aplicacions Web en el institut Cendrassos, Figueres.</li>
-            </ol>
-        </article>
-        
-        <hr class="border">
-        
-        <article class="article2">
-            <h2 id="experiencia">Experiència</h2>
-            <ol type="1">
-                <li>FCT (Formació en Centres de Treball), en el departament d'informàtica del Consell Comarcal de l'Alt Empordà <span>14/10/2019-20/02/2020</span></li>
-            </ol>
-        </article>
-        
-        <hr class="border">
-        
-        <article class="article2">
-            <h2 id="aficions">Aficions</h2>
-            <div class="aficions">
-                <img src="imatges/img6.jpg">
-                <img src="imatges/img7.jpg">
-            </div>
-        </article>
-        
-        <hr class="border">
-        
+        <!--        
         <article class="article2">
             <h2 id="habilitats">Habilitats</h2>
             <div class="progressbar">
@@ -236,18 +198,6 @@
                 <li>Sr. Marc Martí, Cap del Departament d'Informàtica del Consell Comarcal de l'Alt Empordà.</li>
             </ol>
         </article>
-        
-        <footer>
-            <div class="navFooter">
-                <a class="elementmenu" href="#informacio">Informació Personal</a>
-                <a class="elementmenu" href="#idiomes">Idiomes</a>
-                <a class="elementmenu" href="#estudis">Estudis</a>
-                <a class="elementmenu" href="#experiencia">Experiència</a>
-                <a class="elementmenu" href="#aficions">Aficions</a>
-                <a class="elementmenu" href="#habilitats">Habilitats</a>
-                <a class="elementmenu" href="#referencies">Referències</a>
-            </div>
-        </footer>
     -->
     </body>
 </html>
