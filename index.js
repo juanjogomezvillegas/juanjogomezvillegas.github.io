@@ -94,6 +94,31 @@ function catalan() {
             <li><b>Telèfon:</b> <a href=\"tel:${ juanjo.getTelephone() }\">${ juanjo.getTelephone() }</a></li>
             <li><b>Correu Electrònic:</b> <a href=\"mailto:${ juanjo.getMail() }\">${ juanjo.getMail() }</a></li>
         </ul>`);
+
+    writeContent("contentStudies", `<dl>
+            <dt><b>setembre 2004 - juny 2013</b></dt>
+            <dd>Primària al col·legi C.E.I.P Joaquim Cusí i Fortunet, Figueres.</dd>
+            <dt><b>setembre 2013 - juny 2017</b></dt>
+            <dd>Títol d'ESO a l'institut Olivar Gran, Figueres.</dd>
+            <dt><b>setembre 2017 - juny 2020</b></dt>
+            <dd>Títol de CFGM de Sistemes Microinformàtics i Xarxes a l'institut Cendrassos, Figueres.</dd>
+            <dt><b>setembre 2020 - juny 2022</b></dt>
+            <dd>Títol de CFGS de Desenvolupament d'Aplicacions Web a l'institut Cendrassos, Figueres.</dd>
+            <dt><b>juliol 2022 - ?</b></dt>
+            <dd>Estudiant el grau en Enginyeria Informàtica a la Universitat de Girona.</dd>
+        </dl>`);
+
+    writeContent("contentExperience", `<dl>
+            <dt><b>14/10/2019 - 20/02/2020</b></dt>
+            <dd>Pràctiques de CFGM al departament d'informàtica del Consell Comarcal de l'Alt Empordà, Figueres.</dd>
+            <dt><b>22/11/2021 - 20/04/2022</b></dt>
+            <dd>Pràctiques de CFGS a l'empresa Apliemporda, Figueres.</dd>
+        </dl>`);
+
+    writeContent("contentHobbies", `
+        <a class="badge">Ciència i Tecnologia</a>
+        <a class="badge">Història</a>
+        <a class="badge">Desenvolupament d'aplicacions</a>`);
 }
 
 /*
@@ -111,6 +136,31 @@ function spanish() {
             <li><b>Teléfono:</b> <a href=\"tel:${ juanjo.getTelephone() }\">${ juanjo.getTelephone() }</a></li>
             <li><b>Correo Electrónico:</b> <a href=\"mailto:${ juanjo.getMail() }\">${ juanjo.getMail() }</a></li>
         </ul>`);
+
+    writeContent("contentStudies", `<dl>
+            <dt><b>septiembre 2004 - junio 2013</b></dt>
+            <dd>Primaria en el colegio C.E.I.P Joaquim Cusí i Fortunet, Figueres.</dd>
+            <dt><b>septiembre 2013 - junio 2017</b></dt>
+            <dd>Título de la ESO en el instituto Olivar Gran, Figueres.</dd>
+            <dt><b>septiembre 2017 - junio 2020</b></dt>
+            <dd>Título de CFGM de Sistemas Microinformáticos y Redes en el instituto Cendrassos, Figueres.</dd>
+            <dt><b>septiembre 2020 - junio 2022</b></dt>
+            <dd>Título de CFGS de Desarrollo de Aplicaciones Web en el instituto Cendrassos, Figueres.</dd>
+            <dt><b>julio 2022 - ?</b></dt>
+            <dd>Estudiando el grado en Ingeniería Informática en la Universitat de Girona.</dd>
+        </dl>`);
+    
+    writeContent("contentExperience", `<dl>
+            <dt><b>14/10/2019 - 20/02/2020</b></dt>
+            <dd>Prácticas de CFGM al departamento de informática del Consejo Comarcal del Alt Empordà, Figueres.</dd>
+            <dt><b>22/11/2021 - 20/04/2022</b></dt>
+            <dd>Prácticas de CFGS a la empresa Apliemporda, Figueres.</dd>
+        </dl>`);
+    
+    writeContent("contentHobbies", `
+        <a class="badge">Ciencia y tecnología</a>
+        <a class="badge">Historia</a>
+        <a class="badge">Desarrollo de aplicaciones</a>`);
 }
 
 /*
@@ -128,6 +178,31 @@ function english() {
             <li><b>Phone:</b> <a href=\"tel:${ juanjo.getTelephone() }\">${ juanjo.getTelephone() }</a></li>
             <li><b>Email:</b> <a href=\"mailto:${ juanjo.getMail() }\">${ juanjo.getMail() }</a></li>
         </ul>`);
+    
+    writeContent("contentStudies", `<dl>
+            <dt><b>september 2004 - june 2013</b></dt>
+            <dd>Primary school C.E.I.P Joaquim Cusí i Fortunet, Figueres.</dd>
+            <dt><b>september 2013 - june 2017</b></dt>
+            <dd>Secondary school degree in the Olivar Gran high school, Figueres.</dd>
+            <dt><b>september 2017 - june 2020</b></dt>
+            <dd>CFGM degree in Microinformatics Systems and Networks at the Cendrassos high school, Figueres.</dd>
+            <dt><b>september 2020 - june 2022</b></dt>
+            <dd>CFGS degree in Development of Web Applications at the Cendrassos high school, Figueres</dd>
+            <dt><b>july 2022 - ?</b></dt>
+            <dd>Studying the degree in Computer science engineering at the University of Girona.</dd>
+        </dl>`);
+    
+    writeContent("contentExperience", `<dl>
+            <dt><b>2019-10-14 - 2020-02-20</b></dt>
+            <dd>Internships of CFGM at the IT department of the Regional Council of Alt Empordà, Figueres.</dd>
+            <dt><b>2021-11-22 - 2022-04-20</b></dt>
+            <dd>Internships of CFGS at the company Apliemporda, Figueres.</dd>
+        </dl>`);
+    
+    writeContent("contentHobbies", `
+        <a class="badge">Science and technology</a>
+        <a class="badge">History</a>
+        <a class="badge">Application development</a>`);
 }
 
 /*
@@ -145,6 +220,31 @@ function french() {
             <li><b>Téléphone:</b> <a href=\"tel:${ juanjo.getTelephone() }\">${ juanjo.getTelephone() }</a></li>
             <li><b>Mail:</b> <a href=\"mailto:${ juanjo.getMail() }\">${ juanjo.getMail() }</a></li>
         </ul>`);
+    
+    writeContent("contentStudies", `<dl>
+            <dt><b>septembre 2004 - juin 2013</b></dt>
+            <dd>Primaire au collège C.E.I.P Joaquim Cusí i Fortunet, Figueres.</dd>
+            <dt><b>septembre 2013 - juin 2017</b></dt>
+            <dd>Titre de secondaire à l'institut Olivar Gran, Figueres.</dd>
+            <dt><b>septembre 2017 - juin 2020</b></dt>
+            <dd>Titre de CFGM de systèmes micro-informatiques et réseaux à l'institut Cendrassos, Figueres.</dd>
+            <dt><b>septembre 2020 - juin 2022</b></dt>
+            <dd>Titre de CFGS Développement d'Applications Web à l'Institut Cendrassos, Figueres.</dd>
+            <dt><b>juillet 2022 - ?</b></dt>
+            <dd>Étudiant le diplôme en génie informatique à l'Université de Girona.</dd>
+        </dl>`);
+
+    writeContent("contentExperience", `<dl>
+            <dt><b>2019-10-14 - 2020-02-20</b></dt>
+            <dd>Pratiques de CFGM dans le département informatique du Conseil Régional de l'Alt Empordà, Figueres.</dd>
+            <dt><b>2021-11-22 - 2022-04-20</b></dt>
+            <dd>Pratiques de CFGS à l'entreprise Apliemporda, Figueres.</dd>
+        </dl>`);
+    
+    writeContent("contentHobbies", `
+        <a class="badge">Science et technologie</a>
+        <a class="badge">Histoire</a>
+        <a class="badge">Développement d'applications</a>`);
 }
 
 /*
