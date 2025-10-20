@@ -122,6 +122,34 @@ section > article > div {
     flex-wrap: wrap;
 }
 
+div.projectCard {
+    margin: 3px;
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 1px 1px var(--gray);
+    background-color: var(--colorSecondary);
+    color: var(--white);
+    transition: all .5s;
+}
+
+div.projectCard:hover {
+    box-shadow: 0px 0px 3px 3px var(--gray);
+    transition: all .5s;
+}
+
+div.projectCard a {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    color: var(--white);
+    transition: all .5s;
+}
+
+div.projectCard a:hover {
+    color: var(--red);
+    transition: all .5s;
+}
+
 dl > dd {
     margin-left: 50px;
 }
@@ -136,6 +164,11 @@ h2 {
     margin: 20px;
     font-size: 25px;
     text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: left;
 }
 
 hr.border {

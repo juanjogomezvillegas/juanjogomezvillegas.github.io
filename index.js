@@ -1,49 +1,24 @@
 
-class Person {
-    // attributes
-    #name;
-    #birthplace;
-    #birthyear;
-    #residence;
-    #postalCode;
-    #mobile;
-    #tel;
-    #mail;
-    // constructor
-    constructor(name, birthplace, birthyear, residence, postalCode, mobile, tel, mail) {
-        this.#name = name;
-        this.#birthplace = birthplace;
-        this.#birthyear = birthyear;
-        this.#residence = residence;
-        this.#postalCode = postalCode;
-        this.#mobile = mobile;
-        this.#tel = tel;
-        this.#mail = mail;
-    }
-    // methods
-    getName() {
-        return this.#name;
-    }
-    getBirth() {
-        return this.#birthplace+", "+this.#birthyear;
-    }
-    getResidence() {
-        return this.#residence+", "+this.#postalCode;
-    }
-    getTelephone(mobile = false) {
-        if (mobile) {
-            return this.#mobile;
-        } else {
-            return this.#tel;
-        }
-    }
-    getMail() {
-        return this.#mail;
-    }
-}
-
 // Store my information in object juanjo of type Person
 const juanjo = new Person("Juan José Gómez Villegas", "Figueres, Girona", 2001, "Figueres", 17600, "674 979 133", "972 671 123", "juanjogomvil@gmail.com");
+
+const projects = [
+    new Project(["Joc de la Vida","Juego de la Vida","Game of Life","Jeu de la Vie"], 
+                ["Implementació del famós joc de la vida amb html+css+javascript+php.","Implementación del famoso juego de la vida con HTML+css+javascript+php.","Implementation of the famous game of life with html+css+javascript+php.","Prise en charge du célèbre jeu de vie avec html+css+javascript+php."], 
+                arrayLinksSourceCode("https://github.com/juanjogomezvillegas/GameOfLifeJuanjoGomezVillegas")), 
+    new Project(["Sistema de Vot Electrònic","Sistema de Voto Electrónico","Electronic Voting System","Application de vote électronique"], 
+                ["Aplicació que permet gestionar el sistema de vot d'unes eleccions.","Aplicación que permite gestionar el sistema de voto de unas elecciones.","Application that allows you to manage the voting system of an election.","Application qui permet de gérer le système de vote d'une élection."], 
+                arrayLinksSourceCode("https://github.com/juanjogomezvillegas/Sistema-de-Vot-Electronic")), 
+    new Project(["Pràctica de Prolog, GEINF, UdG","Práctica de Prolog, GEINF, UdG","Prolog Practice, GEINF, UdG","Pratique de Prolog, GEINF, UdG"], 
+                ["Implementació de diversos mètodes per calcular el grau de desordre d'una llista.","Implementación de varios métodos para calcular el grado de desorden de una lista.","Implementation of several methods to calculate the degree of disorder in a list.","Prise en charge des méthodes pour calculer le degré de désordre d'une liste."], 
+                arrayLinksSourceCode("https://github.com/juanjogomezvillegas/PracticaProlog-GEINF-UdG")), 
+    new Project(["Pràctica de Haskell, GEINF, UdG","Práctica de Haskell, GEINF, UdG","Haskell practice, GEINF, UdG","Pratique de Haskell, GEINF, UdG"], 
+                ["És un intèrpret de lambda càlcul.","Es un intérprete de lambda cálculo.","He is a interpreter of lambda calculus.","C'est un interpréteur de lambda calcul."], 
+                arrayLinksSourceCode("https://github.com/juanjogomezvillegas/PracticaHaskell-GEINF-UdG")), 
+    new Project(["Aplicació d'ECO amb Sockets TCP/IP","Aplicación de ECO con Sockets TCP/IP","Application of ECO with TCP/IP Sockets","Application ECO avec Sockets TCP/IP"], 
+                ["Defineix un protocol de Xarxa, PECO, seguint un model C_S.","Define un protocolo de Red, PECO, siguiendo un modelo C_S.","Defines a Network Protocol, PECO, following a C,S model.","Définir un protocole Réseau, PECO, suivant un modèle C_S."], 
+                arrayLinksSourceCode("https://github.com/juanjogomezvillegas/P1-ECO_amb_sockets_TCP-IP_Xarxes"))
+];
 
 /*
 * run code on load page
@@ -119,6 +94,8 @@ function catalan() {
         <a class="badge">Ciència i Tecnologia</a>
         <a class="badge">Història</a>
         <a class="badge">Desenvolupament d'aplicacions</a>`);
+
+    writeContent("contentPortfolio", getPortfolio("ca"));
 }
 
 /*
@@ -161,6 +138,8 @@ function spanish() {
         <a class="badge">Ciencia y tecnología</a>
         <a class="badge">Historia</a>
         <a class="badge">Desarrollo de aplicaciones</a>`);
+    
+    writeContent("contentPortfolio", getPortfolio("es"));
 }
 
 /*
@@ -203,6 +182,8 @@ function english() {
         <a class="badge">Science and technology</a>
         <a class="badge">History</a>
         <a class="badge">Application development</a>`);
+    
+    writeContent("contentPortfolio", getPortfolio("en"));
 }
 
 /*
@@ -245,6 +226,8 @@ function french() {
         <a class="badge">Science et technologie</a>
         <a class="badge">Histoire</a>
         <a class="badge">Développement d'applications</a>`);
+    
+    writeContent("contentPortfolio", getPortfolio("fr"));
 }
 
 /*
@@ -282,4 +265,39 @@ function writeItemNav(item, id) {
 */
 function writeContent(id, content) {
     document.getElementById(id).innerHTML = content;
+}
+
+/*
+* return array of links in html label, in different languages
+*/
+function arrayLinksSourceCode(link) {
+    let texts = ["enllaç al codi font","enlace al código fuente","source link","lien code source"];
+    let links = new Array(4);
+
+    for (i = 0; i < 4; i++) {
+        links[i] = `<a href="${ link }">${ texts[i] }</a>`
+    }
+
+    return links;
+}
+
+/*
+* return the personal projects in portfolio
+*/
+function getPortfolio(lang) {
+    let contentProjects = "";
+    
+    for (i = 0; i < projects.length; i++) {
+        if (lang == "ca") {
+            contentProjects += projects[i].getCaInfo();
+        } else if (lang == "es") {
+            contentProjects += projects[i].getEsInfo();
+        } else if (lang == "en") {
+            contentProjects += projects[i].getEnInfo();
+        } else if (lang == "fr") {
+            contentProjects += projects[i].getFrInfo();
+        }
+    }
+
+    return contentProjects;
 }
