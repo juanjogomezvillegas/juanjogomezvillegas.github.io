@@ -71,8 +71,10 @@ class Project {
     #formatInfo(title, body, linkCode) {
         return `<div class="projectCard">
             <h3>${ title }</h3>
-            <p>${ body }</p>
-            ${ linkCode }
+            <div>
+                <p>${ body }</p>
+                ${ linkCode }
+            </div>
         </div>`;
     }
 }

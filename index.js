@@ -273,9 +273,9 @@ function writeContent(id, content) {
 function arrayLinksSourceCode(link) {
     let texts = ["enllaç al codi font","enlace al código fuente","source link","lien code source"];
     let links = new Array(4);
-
+    
     for (i = 0; i < 4; i++) {
-        links[i] = `<a href="${ link }">${ texts[i] }</a>`
+        links[i] = `<a href="${ link }">${ texts[i] }</a>`;
     }
 
     return links;
