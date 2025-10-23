@@ -35,6 +35,10 @@ window.onload = function() {
     document.getElementById("toggleNavbar").addEventListener("click", navbarToggle);
 }
 
+window.addEventListener("scroll", () => {
+    document.getElementById("goToTop").style.visibility = "visible";
+});
+
 /*
 * show menu in responsive design
 */

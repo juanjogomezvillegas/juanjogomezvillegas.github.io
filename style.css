@@ -238,6 +238,7 @@ hr.border {
 }
 
 div#goToTop {
+    visibility: hidden;
     margin: 10px;
     float: right;
 }
