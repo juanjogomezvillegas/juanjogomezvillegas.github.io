@@ -16,8 +16,12 @@ const projects = [
                 ["És un intèrpret de lambda càlcul.","Es un intérprete de lambda cálculo.","He is a interpreter of lambda calculus.","C'est un interpréteur de lambda calcul."], 
                 arrayLinksSourceCode("https://github.com/juanjogomezvillegas/PracticaHaskell-GEINF-UdG")), 
     new Project(["Aplicació d'ECO amb Sockets TCP/IP","Aplicación de ECO con Sockets TCP/IP","Application of ECO with TCP/IP Sockets","Application ECO avec Sockets TCP/IP"], 
-                ["Defineix un protocol de Xarxa, PECO, seguint un model C_S.","Define un protocolo de Red, PECO, siguiendo un modelo C_S.","Defines a Network Protocol, PECO, following a C,S model.","Définir un protocole Réseau, PECO, suivant un modèle C_S."], 
-                arrayLinksSourceCode("https://github.com/juanjogomezvillegas/P1-ECO_amb_sockets_TCP-IP_Xarxes"))
+                ["Defineix un protocol de Xarxa, PECO, seguint un model C_S.","Define un protocolo de Red, PECO, siguiendo un modelo C_S.","Defines a Network Protocol, PECO, following a C_S model.","Définir un protocole Réseau, PECO, suivant un modèle C_S."], 
+                arrayLinksSourceCode("https://github.com/juanjogomezvillegas/P1-ECO_amb_sockets_TCP-IP_Xarxes")), 
+
+    new Project(["Protocol UEB amb Sockets TCP/IP","Protocolo UEB con Sockets TCP/IP","UEB protocol with TCP/IP Sockets","Protocole UEB avec Sockets TCP/IP"], 
+                ["Definició d'un protocol com una versió senzilla de HTTP, anomenat UEB que segueix el model C_S.","Definición de un protocolo como una versión sencilla de HTTP, denominado UEB que sigue el modelo C_S.","Definition of a protocol as a simple version of HTTP, called UEB that follows the C_S model.","Définition d'un protocole comme une version simple de HTTP, appelé UEB qui suit le modèle C_S."], 
+                arrayLinksSourceCode("https://github.com/juanjogomezvillegas/P2-UEB_amb_sockets_TCP-IP_Xarxes"))
 ];
 
 /*
@@ -28,6 +32,20 @@ window.onload = function() {
     catalan();
 
     document.getElementById("selChangeLang").addEventListener("change", selectLanguage);
+    document.getElementById("toggleNavbar").addEventListener("click", navbarToggle);
+}
+
+/*
+* show menu in responsive design
+*/
+function navbarToggle() {
+    let navbar = document.getElementsByTagName("nav")[0].getElementsByTagName("div")[0];
+
+    if (navbar.style.display == "none") {
+        navbar.style.display = "block";
+    } else {
+        navbar.style.display = "none";
+    }
 }
 
 /*
@@ -245,19 +263,12 @@ function itemsNavAndTitles(items) {
     let idsTitles = ["personalInfo","languages","studies","experience","hobbies","skills","portfolio","references"];
 
     for (i = 0; i < idsItemNav.length; i++) {
-        writeItemNav(items[i], idsItemNav[i].id);
+        document.getElementById(idsItemNav[i].id).textContent = items[i];
     }
 
     for (i = 0; i < idsTitles.length; i++) {
         document.getElementById(idsTitles[i]).getElementsByTagName("article")[0].getElementsByTagName("h2")[0].textContent = items[i];
     }
-}
-
-/*
-* write item the navbar
-*/
-function writeItemNav(item, id) {
-    document.getElementById(id).textContent = item;
 }
 
 /*
@@ -275,7 +286,7 @@ function arrayLinksSourceCode(link) {
     let links = new Array(4);
     
     for (i = 0; i < 4; i++) {
-        links[i] = `<a href="${ link }">${ texts[i] }</a>`;
+        links[i] = `<a href="${ link }" target="_blank">${ texts[i] }</a>`;
     }
 
     return links;
