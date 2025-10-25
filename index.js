@@ -24,6 +24,8 @@ const projects = [
                 arrayLinksSourceCode("https://github.com/juanjogomezvillegas/P2-UEB_amb_sockets_TCP-IP_Xarxes"))
 ];
 
+let modeDisco = false;
+
 /*
 * run code on load page
 */
@@ -32,7 +34,31 @@ window.onload = function() {
     catalan();
 
     document.getElementById("selChangeLang").addEventListener("change", selectLanguage);
+    document.getElementById("selChangeTheme").addEventListener("change", selectTheme);
     document.getElementById("toggleNavbar").addEventListener("click", navbarToggle);
+    document.getElementById("modeDisco").addEventListener("click", () => {
+        let body = document.body;
+        let img = document.getElementById("centralImage");
+        let icons = document.getElementsByTagName("i");
+
+        if (!modeDisco) {
+            setAnimation(body, "changeTheme", "0.03s", "infinite");
+            setAnimation(img, "rotateElem", "0.3s", "infinite");
+            for (i = 0; i < icons.length; i++) {
+                setAnimation(icons[i], "rotateElem", "0.3s", "infinite");
+            }
+            modeDisco = true;
+            document.getElementById("modeDisco").innerHTML = "<i class=\"fa fa-pause\"></i>";
+        } else {
+            setAnimation(body);
+            setAnimation(img);
+            for (i = 0; i < icons.length; i++) {
+                setAnimation(icons[i]);
+            }
+            modeDisco = false;
+            document.getElementById("modeDisco").innerHTML = "<i class=\"fa fa-play\"></i>";
+        }
+    });
 }
 
 window.addEventListener("scroll", () => {
@@ -49,6 +75,27 @@ function navbarToggle() {
         navbar.style.display = "block";
     } else {
         navbar.style.display = "none";
+    }
+}
+
+/*
+* show select value, to change theme of the page
+*/
+function selectTheme() {
+    const theme = document.getElementById("selChangeTheme").value;
+
+    switch (theme) {
+        case "dark":
+            changeTheme("#0A0A0A", "#111111", "#515151", "#ffffff");
+            break;
+        case "light":
+            changeTheme();
+            break;
+        case "blood":
+            changeTheme("#5D0000", "#841414", "#D36363", "#000000", "#844714", "#ffff00");
+            break;
+        default:
+            break;
     }
 }
 
@@ -84,12 +131,12 @@ function catalan() {
     itemsNavAndTitles(["Informació Personal","Idiomes","Estudis","Experiència","Aficions","Habilitats","Projectes","Referències"]);
 
     writeContent("contentPersonalInfo", `<ul>
-            <li><b>Nom i Cognom:</b> ${ juanjo.getName() }</li>
-            <li><b>Lloc i Any de Naixement:</b> ${ juanjo.getBirth() }</li>
-            <li><b>Residència i Codi Postal:</b> ${ juanjo.getResidence() }</li>
-            <li><b>Mòbil:</b> <a href=\"tel:${ juanjo.getTelephone(true) }\">${ juanjo.getTelephone(true) }</a></li>
-            <li><b>Telèfon:</b> <a href=\"tel:${ juanjo.getTelephone() }\">${ juanjo.getTelephone() }</a></li>
-            <li><b>Correu Electrònic:</b> <a href=\"mailto:${ juanjo.getMail() }\">${ juanjo.getMail() }</a></li>
+            <li><span class="iconListInfo"><i class="fa fa-user"></i></span><b>Nom i Cognom:</b> ${ juanjo.getName() }</li>
+            <li><span class="iconListInfo"><i class="fa fa-calendar"></i></span><b>Lloc i Any de Naixement:</b> ${ juanjo.getBirth() }</li>
+            <li><span class="iconListInfo"><i class="fa fa-home"></i></span><b>Residència i Codi Postal:</b> ${ juanjo.getResidence() }</li>
+            <li><span class="iconListInfo"><i class="fa fa-mobile"></i></span><b>Mòbil:</b> <a href=\"tel:${ juanjo.getTelephone(true) }\">${ juanjo.getTelephone(true) }</a></li>
+            <li><span class="iconListInfo"><i class="fa fa-phone"></i></span><b>Telèfon:</b> <a href=\"tel:${ juanjo.getTelephone() }\">${ juanjo.getTelephone() }</a></li>
+            <li><span class="iconListInfo"><i class="fa fa-envelope"></i></span><b>Correu Electrònic:</b> <a href=\"mailto:${ juanjo.getMail() }\">${ juanjo.getMail() }</a></li>
         </ul>`);
 
     writeContent("contentStudies", `<dl>
@@ -118,6 +165,11 @@ function catalan() {
         <a class="badge">Desenvolupament d'aplicacions</a>`);
 
     writeContent("contentPortfolio", getPortfolio("ca"));
+
+    writeContent("contentReferences", `<ol>
+            <li>Sr. Marc Martí, Cap del Departament d'Informàtica del Consell Comarcal de l'Alt Empordà.</li>
+            <li>Sr. David Romans, Cap de l'empresa Apliemporda.</li>
+        </ol>`);
 }
 
 /*
@@ -128,12 +180,12 @@ function spanish() {
     itemsNavAndTitles(["Información Personal","Idiomas","Estudios","Experiencia","Aficiones","Habilidades","Proyectos","Referencias"]);
 
     writeContent("contentPersonalInfo", `<ul>
-            <li><b>Nombre i Apellidos:</b> ${ juanjo.getName() }</li>
-            <li><b>Lugar y Año de Nacimiento:</b> ${ juanjo.getBirth() }</li>
-            <li><b>Residencia y Código Postal:</b> ${ juanjo.getResidence() }</li>
-            <li><b>Móvil:</b> <a href=\"tel:${ juanjo.getTelephone(true) }\">${ juanjo.getTelephone(true) }</a></li>
-            <li><b>Teléfono:</b> <a href=\"tel:${ juanjo.getTelephone() }\">${ juanjo.getTelephone() }</a></li>
-            <li><b>Correo Electrónico:</b> <a href=\"mailto:${ juanjo.getMail() }\">${ juanjo.getMail() }</a></li>
+            <li><span class="iconListInfo"><i class="fa fa-user"></i></span><b>Nombre i Apellidos:</b> ${ juanjo.getName() }</li>
+            <li><span class="iconListInfo"><i class="fa fa-calendar"></i></span><b>Lugar y Año de Nacimiento:</b> ${ juanjo.getBirth() }</li>
+            <li><span class="iconListInfo"><i class="fa fa-home"></i></span><b>Residencia y Código Postal:</b> ${ juanjo.getResidence() }</li>
+            <li><span class="iconListInfo"><i class="fa fa-mobile"></i></span><b>Móvil:</b> <a href=\"tel:${ juanjo.getTelephone(true) }\">${ juanjo.getTelephone(true) }</a></li>
+            <li><span class="iconListInfo"><i class="fa fa-phone"></i></span><b>Teléfono:</b> <a href=\"tel:${ juanjo.getTelephone() }\">${ juanjo.getTelephone() }</a></li>
+            <li><span class="iconListInfo"><i class="fa fa-envelope"></i></span><b>Correo Electrónico:</b> <a href=\"mailto:${ juanjo.getMail() }\">${ juanjo.getMail() }</a></li>
         </ul>`);
 
     writeContent("contentStudies", `<dl>
@@ -162,6 +214,11 @@ function spanish() {
         <a class="badge">Desarrollo de aplicaciones</a>`);
     
     writeContent("contentPortfolio", getPortfolio("es"));
+
+    writeContent("contentReferences", `<ol>
+            <li>Sr. Marc Martí, Jefe del Departamento de Informática del Consejo Comarcal del Alt Empordà.</li>
+            <li>Sr. David Romans, Jefe de la empresa Apliemporda.</li>
+        </ol>`);
 }
 
 /*
@@ -172,12 +229,12 @@ function english() {
     itemsNavAndTitles(["Personal Information","Languages","Studies","Experience","Hobbies","Skills","Portfolio","References"]);
 
     writeContent("contentPersonalInfo", `<ul>
-            <li><b>Name and Surname:</b> ${ juanjo.getName() }</li>
-            <li><b>Place and Year of Birth:</b> ${ juanjo.getBirth() }</li>
-            <li><b>Residence and Postal Code:</b> ${ juanjo.getResidence() }</li>
-            <li><b>Mobile:</b> <a href=\"tel:${ juanjo.getTelephone(true) }\">${ juanjo.getTelephone(true) }</a></li>
-            <li><b>Phone:</b> <a href=\"tel:${ juanjo.getTelephone() }\">${ juanjo.getTelephone() }</a></li>
-            <li><b>Email:</b> <a href=\"mailto:${ juanjo.getMail() }\">${ juanjo.getMail() }</a></li>
+            <li><span class="iconListInfo"><i class="fa fa-user"></i></span><b>Name and Surname:</b> ${ juanjo.getName() }</li>
+            <li><span class="iconListInfo"><i class="fa fa-calendar"></i></span><b>Place and Year of Birth:</b> ${ juanjo.getBirth() }</li>
+            <li><span class="iconListInfo"><i class="fa fa-home"></i></span><b>Residence and Postal Code:</b> ${ juanjo.getResidence() }</li>
+            <li><span class="iconListInfo"><i class="fa fa-mobile"></i></span><b>Mobile:</b> <a href=\"tel:${ juanjo.getTelephone(true) }\">${ juanjo.getTelephone(true) }</a></li>
+            <li><span class="iconListInfo"><i class="fa fa-phone"></i></span><b>Phone:</b> <a href=\"tel:${ juanjo.getTelephone() }\">${ juanjo.getTelephone() }</a></li>
+            <li><span class="iconListInfo"><i class="fa fa-envelope"></i></span><b>Email:</b> <a href=\"mailto:${ juanjo.getMail() }\">${ juanjo.getMail() }</a></li>
         </ul>`);
     
     writeContent("contentStudies", `<dl>
@@ -206,6 +263,11 @@ function english() {
         <a class="badge">Application development</a>`);
     
     writeContent("contentPortfolio", getPortfolio("en"));
+
+    writeContent("contentReferences", `<ol>
+            <li>Mr. Marc Martí, Head of the IT Department of the Alt Empordà Regional Council.</li>
+            <li>Mr. David Romans, Head of the Apliemporda company.</li>
+        </ol>`);
 }
 
 /*
@@ -216,12 +278,12 @@ function french() {
     itemsNavAndTitles(["Information personnel","Langues","Études","Expérience","Loisirs","Compétences","Portefeuille","Références"]);
 
     writeContent("contentPersonalInfo", `<ul>
-            <li><b>Nom et prénom:</b> ${ juanjo.getName() }</li>
-            <li><b>Lieu et Année de naissance:</b> ${ juanjo.getBirth() }</li>
-            <li><b>Résidence et code postal:</b> ${ juanjo.getResidence() }</li>
-            <li><b>Mobile:</b> <a href=\"tel:${ juanjo.getTelephone(true) }\">${ juanjo.getTelephone(true) }</a></li>
-            <li><b>Téléphone:</b> <a href=\"tel:${ juanjo.getTelephone() }\">${ juanjo.getTelephone() }</a></li>
-            <li><b>Mail:</b> <a href=\"mailto:${ juanjo.getMail() }\">${ juanjo.getMail() }</a></li>
+            <li><span class="iconListInfo"><i class="fa fa-user"></i></span><b>Nom et prénom:</b> ${ juanjo.getName() }</li>
+            <li><span class="iconListInfo"><i class="fa fa-calendar"></i></span><b>Lieu et Année de naissance:</b> ${ juanjo.getBirth() }</li>
+            <li><span class="iconListInfo"><i class="fa fa-home"></i></span><b>Résidence et code postal:</b> ${ juanjo.getResidence() }</li>
+            <li><span class="iconListInfo"><i class="fa fa-mobile"></i></span><b>Mobile:</b> <a href=\"tel:${ juanjo.getTelephone(true) }\">${ juanjo.getTelephone(true) }</a></li>
+            <li><span class="iconListInfo"><i class="fa fa-phone"></i></span><b>Téléphone:</b> <a href=\"tel:${ juanjo.getTelephone() }\">${ juanjo.getTelephone() }</a></li>
+            <li><span class="iconListInfo"><i class="fa fa-envelope"></i></span><b>Mail:</b> <a href=\"mailto:${ juanjo.getMail() }\">${ juanjo.getMail() }</a></li>
         </ul>`);
     
     writeContent("contentStudies", `<dl>
@@ -250,6 +312,11 @@ function french() {
         <a class="badge">Développement d'applications</a>`);
     
     writeContent("contentPortfolio", getPortfolio("fr"));
+
+    writeContent("contentReferences", `<ol>
+            <li>Mr. Marc Martí, Chef du Département de l'Informatique du Conseil Régional de l'Alt Empordà.</li>
+            <li>Mr. David Romans, chef de l'entreprise Apliemporda.</li>
+        </ol>`);
 }
 
 /*
@@ -315,4 +382,25 @@ function getPortfolio(lang) {
     }
 
     return contentProjects;
+}
+
+/*
+* change values of css variables
+*/
+function changeTheme(colorPrimary = "#00206F", colorSecondary = "#0132AE", colorBackgroundBody = "#ffffff", colorTextBody = "#000000", colorGray = "#898989", colorRed = "#EC0000") {
+    document.documentElement.style.setProperty("--colorPrimary", colorPrimary);
+    document.documentElement.style.setProperty("--colorSecondary", colorSecondary);
+    document.documentElement.style.setProperty("--colorBackgroundBody", colorBackgroundBody);
+    document.documentElement.style.setProperty("--colorTextBody", colorTextBody);
+    document.documentElement.style.setProperty("--gray", colorGray);
+    document.documentElement.style.setProperty("--red", colorRed);
+}
+
+/*
+* set animation with name, duration and iteration count on the elem
+*/
+function setAnimation(elem, animationName = "", animationDuration = "", animationIterCount = "") {
+    elem.style.animationName = animationName;
+    elem.style.animationDuration = animationDuration;
+    elem.style.animationIterationCount = animationIterCount;
 }

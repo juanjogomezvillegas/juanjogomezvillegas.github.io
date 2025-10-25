@@ -6,6 +6,20 @@
    --red: #EC0000;
    --colorPrimary: #00206F;
    --colorSecondary: #0132AE;
+   --colorBackgroundBody: #ffffff;
+   --colorTextBody: #000000;
+}
+
+@keyframes changeTheme {
+    0% {background-color: #ff0000;}
+    50% {background-color: #ffff00;}
+    75% {background-color: #00ff00;}
+    100% {background-color: #0000ff;}
+}
+
+@keyframes rotateElem {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
 }
 
 * {
@@ -13,6 +27,11 @@
     padding: 0;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--colorBackgroundBody);
+    color: var(--colorTextBody);
 }
 
 div#top {
@@ -30,12 +49,23 @@ header {
 }
 
 header > select {
+    margin-right: 5px;
     width: 150px;
     border-radius: 5px;
     text-align: center;
     font-size: 17px;
     background-color: var(--white);
     color: var(--black);
+}
+
+header button#modeDisco {
+    margin-right: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 17px;
+    border: 0px;
+    background-color: var(--colorPrimary);
+    color: var(--white);
 }
 
 nav div {
@@ -78,9 +108,53 @@ div#container > aside {
     color: var(--white);
 }
 
+div#container > aside > div {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+div#container > aside > div img#centralImage {
+    display: flex;
+    align-self: center;
+    width: 40%;
+    transition: all .5s;
+}
+
+div#container > aside > div img#centralImage:hover {
+    transform: scale(1.1);
+    transition: all .5s;
+}
+
 div#container > aside section {
     display: flex;
     justify-content: space-around;
+    margin: 10px;
+}
+
+div#container > aside div#contentPersonalInfo > ul {
+    list-style-type: none;
+}
+
+div#container > aside ul li {
+    margin-bottom: 10px;
+}
+
+span.iconListInfo {
+    padding: 10px;
+    font-size: 20px;
+    color: var(--white);
+}
+
+span.iconListInfo i {
+    transform: scale(1.3);
+    transition: all .5s;
+}
+
+span.iconListInfo i:hover {
+    transform: scale(1.7) rotate(360deg);
+    transition: all .5s;
 }
 
 div#container > aside a {
@@ -131,12 +205,17 @@ section#skills div {
 
 section#studies div {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 section#experience div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+section#references div {
+    display: flex;
+    justify-content: center;
 }
 
 footer {
@@ -215,11 +294,6 @@ h3 {
     text-align: left;
 }
 
-hr.border {
-    margin: 30px 20px 30px 20px;
-    border: 1px solid var(--gray);
-}
-
 .badge {
     margin: 5px;
     padding: 10px;
@@ -273,6 +347,10 @@ div#goToTop > a:hover {
         padding: 10px 20px 10px 20px;
         background-color: var(--colorSecondary);
         color: var(--white);
+    }
+
+    div#container > aside > div {
+        position: static;
     }
 
     div#container > aside a {
