@@ -118,7 +118,7 @@ div#container > aside > div {
 div#container > aside > div img#centralImage {
     display: flex;
     align-self: center;
-    width: 40%;
+    width: 350px;
     transition: all .5s;
 }
 

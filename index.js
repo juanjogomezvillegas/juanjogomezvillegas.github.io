@@ -6,6 +6,9 @@ const projects = [
     new Project(["Joc de la Vida","Juego de la Vida","Game of Life","Jeu de la Vie"], 
                 ["Implementació del famós joc de la vida amb html+css+javascript+php.","Implementación del famoso juego de la vida con HTML+css+javascript+php.","Implementation of the famous game of life with html+css+javascript+php.","Prise en charge du célèbre jeu de vie avec html+css+javascript+php."], 
                 arrayLinksSourceCode("https://github.com/juanjogomezvillegas/GameOfLifeJuanjoGomezVillegas")), 
+    new Project(["Connecta quatre","Conecta cuatro","Connect Four","Connecter quatre"], 
+                ["Implementació del joc del quatre en ratlla amb html+css+javascript.","Implementación del juego del cuatro en raya con HTML+css+javascript.","Implementation of the four-in-a-row game with html+css+javascript.","Prise en charge du jeu à quatre lignes avec html+css+javascript."], 
+                arrayLinksSourceCode("https://github.com/juanjogomezvillegas/Hypermedia-project.Connect-Four")), 
     new Project(["Sistema de Vot Electrònic","Sistema de Voto Electrónico","Electronic Voting System","Application de vote électronique"], 
                 ["Aplicació que permet gestionar el sistema de vot d'unes eleccions.","Aplicación que permite gestionar el sistema de voto de unas elecciones.","Application that allows you to manage the voting system of an election.","Application qui permet de gérer le système de vote d'une élection."], 
                 arrayLinksSourceCode("https://github.com/juanjogomezvillegas/Sistema-de-Vot-Electronic")), 
@@ -40,21 +43,20 @@ window.onload = function() {
         let body = document.body;
         let img = document.getElementById("centralImage");
         let icons = document.getElementsByTagName("i");
+        let links = document.getElementsByTagName("a");
 
         if (!modeDisco) {
-            setAnimation(body, "changeTheme", "0.03s", "infinite");
-            setAnimation(img, "rotateElem", "0.3s", "infinite");
-            for (i = 0; i < icons.length; i++) {
-                setAnimation(icons[i], "rotateElem", "0.3s", "infinite");
-            }
+            setAnimation(body, "changeTheme", "1s", "infinite");
+            setAnimation(img, "rotateElem", ".5s", "infinite");
+            mapAnimation(icons, "rotateElem", ".5s", "infinite");
+            mapAnimation(links, "rotateElem", ".5s", "infinite");
             modeDisco = true;
             document.getElementById("modeDisco").innerHTML = "<i class=\"fa fa-pause\"></i>";
         } else {
             setAnimation(body);
             setAnimation(img);
-            for (i = 0; i < icons.length; i++) {
-                setAnimation(icons[i]);
-            }
+            mapAnimation(icons);
+            mapAnimation(links);
             modeDisco = false;
             document.getElementById("modeDisco").innerHTML = "<i class=\"fa fa-play\"></i>";
         }
@@ -167,8 +169,8 @@ function catalan() {
     writeContent("contentPortfolio", getPortfolio("ca"));
 
     writeContent("contentReferences", `<ol>
-            <li>Sr. Marc Martí, Cap del Departament d'Informàtica del Consell Comarcal de l'Alt Empordà.</li>
-            <li>Sr. David Romans, Cap de l'empresa Apliemporda.</li>
+            <li>Cap del Departament d'Informàtica del Consell Comarcal de l'Alt Empordà.</li>
+            <li>Cap de l'empresa Apliemporda.</li>
         </ol>`);
 }
 
@@ -216,8 +218,8 @@ function spanish() {
     writeContent("contentPortfolio", getPortfolio("es"));
 
     writeContent("contentReferences", `<ol>
-            <li>Sr. Marc Martí, Jefe del Departamento de Informática del Consejo Comarcal del Alt Empordà.</li>
-            <li>Sr. David Romans, Jefe de la empresa Apliemporda.</li>
+            <li>Jefe del Departamento de Informática del Consejo Comarcal del Alt Empordà.</li>
+            <li>Jefe de la empresa Apliemporda.</li>
         </ol>`);
 }
 
@@ -265,8 +267,8 @@ function english() {
     writeContent("contentPortfolio", getPortfolio("en"));
 
     writeContent("contentReferences", `<ol>
-            <li>Mr. Marc Martí, Head of the IT Department of the Alt Empordà Regional Council.</li>
-            <li>Mr. David Romans, Head of the Apliemporda company.</li>
+            <li>Head of the IT Department of the Alt Empordà Regional Council.</li>
+            <li>Head of the Apliemporda company.</li>
         </ol>`);
 }
 
@@ -314,8 +316,8 @@ function french() {
     writeContent("contentPortfolio", getPortfolio("fr"));
 
     writeContent("contentReferences", `<ol>
-            <li>Mr. Marc Martí, Chef du Département de l'Informatique du Conseil Régional de l'Alt Empordà.</li>
-            <li>Mr. David Romans, chef de l'entreprise Apliemporda.</li>
+            <li>Chef du Département de l'Informatique du Conseil Régional de l'Alt Empordà.</li>
+            <li>Chef de l'entreprise Apliemporda.</li>
         </ol>`);
 }
 
@@ -394,6 +396,15 @@ function changeTheme(colorPrimary = "#00206F", colorSecondary = "#0132AE", color
     document.documentElement.style.setProperty("--colorTextBody", colorTextBody);
     document.documentElement.style.setProperty("--gray", colorGray);
     document.documentElement.style.setProperty("--red", colorRed);
+}
+
+/*
+* set animation by all elements to array
+*/
+function mapAnimation(array, animationName = "", animationDuration = "", animationIterCount = "") {
+    for (i = 0; i < array.length; i++) {
+        setAnimation(array[i], animationName, animationDuration, animationIterCount);
+    }
 }
 
 /*
