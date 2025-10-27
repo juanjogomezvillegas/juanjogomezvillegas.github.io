@@ -89,12 +89,15 @@ function selectTheme() {
     switch (theme) {
         case "dark":
             changeTheme("#0A0A0A", "#111111", "#515151", "#ffffff");
+            document.getElementById("centralImage").src = "images/img12.jpg";
             break;
         case "light":
             changeTheme();
+            document.getElementById("centralImage").src = "images/img1.jpg";
             break;
         case "blood":
             changeTheme("#5D0000", "#841414", "#D36363", "#000000", "#844714", "#ffff00");
+            document.getElementById("centralImage").src = "images/img13.jpg";
             break;
         default:
             break;
