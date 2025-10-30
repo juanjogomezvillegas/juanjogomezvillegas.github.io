@@ -5,6 +5,7 @@
         <meta name="author" content="Juan José Gómez Villegas">
         <meta name="description" content="Project 1. CV">
         <meta name="viewport" content="Width=device-Width,initial-scale=1">
+        <!-- title established with javascript -->
         <title></title>
         <link rel="icon" id="currentLanguage">
         <!-- stylesheets files -->
@@ -17,8 +18,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
+        <!-- top of web page -->
         <div id="top_page"></div>
+
+        <!-- section top of web page -->
         <div id="top">
+            <!-- header of web page, with extra functions -->
             <header>
                 <button id="modeDisco"><i class="fa fa-play"></i></button>
                 <select name="changeLang" id="selChangeLang">
@@ -33,6 +38,7 @@
                     <option value="blood">Blood Theme</option>
                 </select>
             </header>
+            <!-- navbar responsive of web page -->
             <nav id="menu">
                 <div>
                     <a class="elementmenu" id="itemPersInfo" href="#personalInfo">Personal Information</a>
@@ -47,13 +53,17 @@
                 <button id="toggleNavbar"><i class="fa fa-bars"></i></button>
             </nav>
         </div>
+
+        <!-- section central content of web page -->
         <div id="container">
+            <!-- section aside of web page. with personal information, list of languages and a personal image -->
             <aside>
                 <div>
                     <img id="centralImage" src="images/img1.jpg" alt="personal image" title="personal image">
                     <section id="personalInfo">
                         <article>
                             <h2>Personal Information</h2>
+                            <!-- unordered list of personal information -->
                             <div id="contentPersonalInfo">
                                 <ul>
                                     <li><b>Name and Surname:</b> Juan José Gómez Villegas</li>
@@ -69,6 +79,7 @@
                     <section id="languages">
                         <article>
                             <h2>Languages</h2>
+                            <!-- unordered list of languages -->
                             <div>
                                 <ul>
                                     <li>Català</li>
@@ -82,10 +93,13 @@
                 </div>
             </aside>
             
+            <!-- section middle central content of web page -->
             <div id="middle">
+                <!-- section studies -->
                 <section id="studies">
                     <article>
                         <h2>Studies</h2>
+                        <!-- definition list of studies -->
                         <div id="contentStudies">
                             <dl>
                                 <dt><b>september 2004 - june 2013</b></dt>
@@ -103,9 +117,11 @@
                     </article>
                 </section>
 
+                <!-- section experience -->
                 <section id="experience">
                     <article>
                         <h2>Experience</h2>
+                        <!-- definition list of experience -->
                         <div id="contentExperience">
                             <dl>
                                 <dt><b>2019-10-14 - 2020-02-20</b></dt>
@@ -117,10 +133,13 @@
                     </article>
                 </section>
 
+                <!-- section hobbies and skills -->
                 <div>
+                    <!-- subsection hobbies -->
                     <section id="hobbies">
                         <article>
                             <h2>Hobbies</h2>
+                            <!-- group of links (badges) -->
                             <div id="contentHobbies">
                                 <a class="badge">science and technology</a>
                                 <a class="badge">history</a>
@@ -129,9 +148,11 @@
                         </article>
                     </section>
                     
+                    <!-- subsection skills -->
                     <section id="skills">
                         <article>
                             <h2>Skills</h2>
+                            <!-- group of links (badges) -->
                             <div id="contentSkills">
                                 <a class="badge">Linux</a>
                                 <a class="badge">Windows</a>
@@ -165,17 +186,21 @@
                     </section>
                 </div>
 
+                <!-- section portfolio, is group elements of cards with information of a personal projects -->
                 <section id="portfolio">
                     <article>
                         <h2>Portfolio</h2>
                         <div id="contentPortfolio">
+                            <!-- code of portfolio generate with javascript -->
                         </div>
                     </article>
                 </section>
 
+                <!-- section references -->
                 <section id="references">
                     <article>
                         <h2>References</h2>
+                        <!-- ordered list of references -->
                         <div id="contentReferences">
                             <ol>
                                 <li>Sr. Marc Martí, Cap del Departament d'Informàtica del Consell Comarcal de l'Alt Empordà.</li>
@@ -186,9 +211,13 @@
                 </section>
             </div>
         </div>
+        
+        <!-- button by go to top of page -->
         <div id="goToTop">
             <a href="#top_page" class="fa fa-arrow-up"></a>
         </div>
+
+        <!-- section footer of web page -->
         <footer>
             <div>
                 <p>Juan José Gómez Villegas &copy; 2025</p>

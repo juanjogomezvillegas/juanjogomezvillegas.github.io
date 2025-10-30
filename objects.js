@@ -1,4 +1,14 @@
 
+/*
+ * Author: Juan José Gómez Villegas
+ * Description: Project 1. CV, objects of javascript file
+*/
+
+/*
+ * Person: Is object that contains a personal information
+ *
+ * instance with new Person(name, birthplace, birthyear, residence, postalCode, mobile, tel, mail)
+*/
 class Person {
     // attributes
     #name;
@@ -20,7 +30,7 @@ class Person {
         this.#tel = tel;
         this.#mail = mail;
     }
-    // methods
+    // methods without any parameters or one optional parameter (by default false), that return the personal information
     getName() {
         return this.#name;
     }
@@ -42,19 +52,29 @@ class Person {
     }
 }
 
+/*
+ * Person: Is object that represents a project card with title, text body and a link to code in GitHub repository
+ *
+ * instance with new Projects(title optional, body optional, linkCode optional)
+ * 
+ * The title, body and linkCode they are a array with one element for each language. For exemple:
+ *          - Position 0, catalan
+ *          - Position 1, spanish
+ *          - Position 2, english
+ *          - Position 3, french
+*/
 class Project {
     // attributes
     #title
     #body
     #linkCode
-    // constructor
-    // [0] => ca; [1] => es; [2] => en; [3] => fr
+    // constructor: [0] => ca; [1] => es; [2] => en; [3] => fr
     constructor(title = [], body = [], linkCode = []) {
         this.#title = title;
         this.#body = body;
         this.#linkCode = linkCode;
     }
-    // methods
+    // methods without any parameters
     getCaInfo() {
         return this.#formatInfo(this.#title[0], this.#body[0], this.#linkCode[0]);
     }
@@ -67,7 +87,7 @@ class Project {
     getFrInfo() {
         return this.#formatInfo(this.#title[3], this.#body[3], this.#linkCode[3]);
     }
-    // private methods
+    // private methods with parameters: title, body and linkCode, that buids a card with project information in a language
     #formatInfo(title, body, linkCode) {
         return `<div class="projectCard">
             <h3>${ title }</h3>

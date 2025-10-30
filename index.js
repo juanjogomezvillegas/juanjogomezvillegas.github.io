@@ -1,7 +1,15 @@
 
+/*
+ * Author: Juan José Gómez Villegas
+ * Description: Project 1. CV, javascript code file
+*/
+
+/* GLOBAL VARIABLES AND INSTANCE OBJECTS */
+
 // Store my information in object juanjo of type Person
 const juanjo = new Person("Juan José Gómez Villegas", "Figueres, Girona", 2001, "Figueres", 17600, "674 979 133", "972 671 123", "juanjogomvil@gmail.com");
 
+// Store a projects information in array of the objects of type Project  
 const projects = [
     new Project(["Joc de la Vida","Juego de la Vida","Game of Life","Jeu de la Vie"], 
                 ["Implementació del famós joc de la vida amb html+css+javascript+php.","Implementación del famoso juego de la vida con HTML+css+javascript+php.","Implementation of the famous game of life with html+css+javascript+php.","Prise en charge du célèbre jeu de vie avec html+css+javascript+php."], 
@@ -29,30 +37,41 @@ const projects = [
 
 let modeDisco = false;
 
+/* PRINCIPAL EVENTS */
+
 /*
 * run code on load page
 */
 window.onload = function() {    
+    // establish title of tab the page
     document.title = "Currículum Juan José Gómez villegas";
+    
+    // generates the content of the page in language by default (catalan)
     catalan();
 
+    // declarations events on change
     document.getElementById("selChangeLang").addEventListener("change", selectLanguage);
     document.getElementById("selChangeTheme").addEventListener("change", selectTheme);
+    // declarations events on click
     document.getElementById("toggleNavbar").addEventListener("click", navbarToggle);
     document.getElementById("modeDisco").addEventListener("click", () => {
+        // declaration local variables
         let body = document.body;
         let img = document.getElementById("centralImage");
         let icons = document.getElementsByTagName("i");
         let links = document.getElementsByTagName("a");
 
+        // if modeDisco equal to false
         if (!modeDisco) {
+            // active css animations and modeDisco variable
             setAnimation(body, "changeTheme", "1s", "infinite");
             setAnimation(img, "rotateElem", ".5s", "infinite");
             mapAnimation(icons, "rotateElem", ".5s", "infinite");
             mapAnimation(links, "rotateElem", ".5s", "infinite");
             modeDisco = true;
             document.getElementById("modeDisco").innerHTML = "<i class=\"fa fa-pause\"></i>";
-        } else {
+        } else { // else if modeDisco equal to true
+            // desactive css animations and modeDisco variable
             setAnimation(body);
             setAnimation(img);
             mapAnimation(icons);
@@ -63,16 +82,23 @@ window.onload = function() {
     });
 }
 
+/*
+* run code on scroll page
+*/
 window.addEventListener("scroll", () => {
+    // make visible the button by go to top
     document.getElementById("goToTop").style.visibility = "visible";
 });
 
+/* FUNCTIONS */
+
 /*
-* show menu in responsive design
+* show nav in responsive design
 */
 function navbarToggle() {
     let navbar = document.getElementsByTagName("nav")[0].getElementsByTagName("div")[0];
 
+    // Show or stop show nav when on click to toggle button in navbar
     if (navbar.style.display == "none") {
         navbar.style.display = "block";
     } else {
@@ -81,21 +107,21 @@ function navbarToggle() {
 }
 
 /*
-* show select value, to change theme of the page
+* show select value to change theme of the page
 */
 function selectTheme() {
     const theme = document.getElementById("selChangeTheme").value;
 
     switch (theme) {
-        case "dark":
+        case "dark": // change to dark theme
             changeTheme("#0A0A0A", "#111111", "#515151", "#ffffff");
             document.getElementById("centralImage").src = "images/img12.jpg";
             break;
-        case "light":
+        case "light": // change to light theme (by default)
             changeTheme();
             document.getElementById("centralImage").src = "images/img1.jpg";
             break;
-        case "blood":
+        case "blood": // change to blood theme
             changeTheme("#5D0000", "#841414", "#D36363", "#000000", "#844714", "#ffff00");
             document.getElementById("centralImage").src = "images/img13.jpg";
             break;
@@ -105,26 +131,26 @@ function selectTheme() {
 }
 
 /*
-* show select value, to change language
+* show select value to change language
 */
 function selectLanguage() {
     const lang = document.getElementById("selChangeLang").value;
 
     switch (lang) {
-        case "ca":
+        case "ca": // render the content of the page in catalan
             catalan();
             break;
-        case "es":
+        case "es": // render the content of the page in spanish
             spanish();
             break;
-        case "en":
+        case "en": // render the content of the page in english
             english();
             break;
-        case "fr":
+        case "fr": // render the content of the page in french
             french();
             break;
-        default:
-            console.log("error");
+        default: // in other case, render the content of the page in catalan
+            catalan();
     }
 }
 
@@ -325,23 +351,26 @@ function french() {
 }
 
 /*
-* change icon the page
+* change icon the tab of the page
 */
 function icon(img) {
     document.getElementById("currentLanguage").href = img;
 }
 
 /*
-* establish titles in navbar
+* establish titles and items navbar
 */
 function itemsNavAndTitles(items) {
+    // obtains a ids of items navbar and ids of titles
     let idsItemNav = document.getElementById("menu").getElementsByClassName("elementmenu");
     let idsTitles = ["personalInfo","languages","studies","experience","hobbies","skills","portfolio","references"];
 
+    // render the text content items navbar
     for (i = 0; i < idsItemNav.length; i++) {
         document.getElementById(idsItemNav[i].id).textContent = items[i];
     }
 
+    // render the text content titles
     for (i = 0; i < idsTitles.length; i++) {
         document.getElementById(idsTitles[i]).getElementsByTagName("article")[0].getElementsByTagName("h2")[0].textContent = items[i];
     }
@@ -355,7 +384,7 @@ function writeContent(id, content) {
 }
 
 /*
-* return array of links in html label, in different languages
+* return array of links in html tag <a></a> in different languages
 */
 function arrayLinksSourceCode(link) {
     let texts = ["enllaç al codi font","enlace al código fuente","source link","lien code source"];
@@ -411,7 +440,7 @@ function mapAnimation(array, animationName = "", animationDuration = "", animati
 }
 
 /*
-* set animation with name, duration and iteration count on the elem
+* set animation with name, duration and iteration count on the element elem
 */
 function setAnimation(elem, animationName = "", animationDuration = "", animationIterCount = "") {
     elem.style.animationName = animationName;

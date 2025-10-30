@@ -1,4 +1,10 @@
 
+/*
+ * Author: Juan José Gómez Villegas
+ * Description: Project 1. CV, stylesheets file
+*/
+
+/* CSS VARIABLES */
 :root{
    --black: #000000;
    --white: #ffffff;
@@ -10,6 +16,9 @@
    --colorTextBody: #000000;
 }
 
+/* CSS ANIMATIONS */
+
+/* Animation by change theme */
 @keyframes changeTheme {
     0% {background-color: #ff0000;}
     50% {background-color: #ffff00;}
@@ -17,11 +26,16 @@
     100% {background-color: #0000ff;}
 }
 
+/* Animation by rotate elements */
 @keyframes rotateElem {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
 }
 
+/* FOR ALL DEVICES */
+
+/* For all descendents of the elements
+ * CSS Specificity = 0 */
 * {
     margin: 0;
     padding: 0;
@@ -29,11 +43,15 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* For body element
+ * CSS Specificity = 1 */
 body {
     background-color: var(--colorBackgroundBody);
     color: var(--colorTextBody);
 }
 
+/* For div with id top element
+ * CSS Specificity = 101 */
 div#top {
     position: sticky;
     top: 0px;
@@ -41,6 +59,12 @@ div#top {
     width: 100%;
 }
 
+/* FOR DESKTOP */
+
+/* header styles */
+
+/* For header element
+ * CSS Specificity = 1 */
 header {
     display: flex;
     justify-content: flex-end;
@@ -48,6 +72,8 @@ header {
     background-color: var(--colorPrimary);
 }
 
+/* For select element in first level under the header
+ * CSS Specificity = 2 */
 header > select {
     margin-right: 5px;
     width: 150px;
@@ -58,6 +84,8 @@ header > select {
     color: var(--black);
 }
 
+/* For button with id modeDisco in header element
+ * CSS Specificity = 102 */
 header button#modeDisco {
     margin-right: 15px;
     border-radius: 5px;
@@ -68,16 +96,24 @@ header button#modeDisco {
     color: var(--white);
 }
 
+/* navbar styles */
+
+/* For div element in nav element
+ * CSS Specificity = 2 */
 nav div {
     display: flex;
     justify-content: center;
     background-color: var(--colorPrimary);
 }
 
+/* For button with id toggleNavbar element in nav element
+ * CSS Specificity = 102 */
 nav button#toggleNavbar {
     display: none;
 }
 
+/* For links in nav element
+ * CSS Specificity = 2 */
 nav a {
     margin-left: 5px;
     padding: 10px;
@@ -87,12 +123,18 @@ nav a {
     transition: all .5s;
 }
 
+/* For links in nav element when the mouse is on it
+ * CSS Specificity = 12 */
 nav a:hover {
     background-color: var(--white);
     color: var(--colorPrimary);
     transition: all .5s;
 }
 
+/* div with id container styles */
+
+/* For div with id container
+ * CSS Specificity = 101 */
 div#container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -101,6 +143,10 @@ div#container {
     grid-row-gap: 0px;
 }
 
+/* aside styles */
+
+/* For aside in div with id container
+ * CSS Specificity = 102 */
 div#container > aside {
     grid-area: 1 / 1 / 6 / 2;
     padding: 10px 20px 10px 20px;
@@ -108,6 +154,8 @@ div#container > aside {
     color: var(--white);
 }
 
+/* For div in aside in div with id container
+ * CSS Specificity = 103 */
 div#container > aside > div {
     position: fixed;
     display: flex;
@@ -115,6 +163,8 @@ div#container > aside > div {
     justify-content: space-around;
 }
 
+/* For img with id centralImage in div in aside in div with id container
+ * CSS Specificity = 204 */
 div#container > aside > div img#centralImage {
     display: flex;
     align-self: center;
@@ -122,52 +172,74 @@ div#container > aside > div img#centralImage {
     transition: all .5s;
 }
 
+/* For img with id centralImage in div in aside in div with id container when the mouse is on it
+ * CSS Specificity = 214 */
 div#container > aside > div img#centralImage:hover {
     transform: scale(1.1);
     transition: all .5s;
 }
 
+/* For section in aside in div with id container
+ * CSS Specificity = 103 */
 div#container > aside section {
     display: flex;
     justify-content: space-around;
     margin: 10px;
 }
 
+/* For ul in div with id contentPersonalInfo
+ * CSS Specificity = 204 */
 div#container > aside div#contentPersonalInfo > ul {
     list-style-type: none;
 }
 
+/* For li in ul in aside
+ * CSS Specificity = 104 */
 div#container > aside ul li {
     margin-bottom: 10px;
 }
 
+/* For span with class iconListInfo
+ * CSS Specificity = 11 */
 span.iconListInfo {
     padding: 10px;
     font-size: 20px;
     color: var(--white);
 }
 
+/* For i element in span with class iconListInfo
+ * CSS Specificity = 12 */
 span.iconListInfo i {
     transform: scale(1.3);
     transition: all .5s;
 }
 
+/* For i element in span with class iconListInfo when the mouse is on it
+ * CSS Specificity = 22 */
 span.iconListInfo i:hover {
     transform: scale(1.7) rotate(360deg);
     transition: all .5s;
 }
 
+/* For link in aside
+ * CSS Specificity = 103 */
 div#container > aside a {
     text-decoration: none;
     color: var(--white);
     transition: all .5s;
 }
 
+/* For link in aside when the mouse is on it
+ * CSS Specificity = 113 */
 div#container > aside a:hover {
     color: var(--red);
     transition: all .5s;
 }
 
+/* div with id middle styles */
+
+/* For div with id middle in div container
+ * CSS Specificity = 202 */
 div#container > div#middle {
     grid-area: 1 / 2 / 6 / 5;
     margin-left: 50px;
@@ -175,6 +247,8 @@ div#container > div#middle {
     padding: 10px;
 }
 
+/* For div in div with id middle in div container
+ * CSS Specificity = 203 */
 div#container > div#middle > div {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -183,62 +257,101 @@ div#container > div#middle > div {
     grid-row-gap: 0px;
 }
 
+/* section hobbies styles */
+
+/* For section with id hobbies
+ * CSS Specificity = 101 */
 section#hobbies {
     grid-area: 1 / 1 / 2 / 3;
 }
 
+/* For div in section with id hobbies
+ * CSS Specificity = 102 */
 section#hobbies div {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
+/* section skills styles */
+
+/* For section with id skills
+ * CSS Specificity = 101 */
 section#skills {
     grid-area: 1 / 3 / 2 / 5;
 }
 
+/* For div in section with id skills
+ * CSS Specificity = 102 */
 section#skills div {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
+/* section studies styles */
+
+/* For div in section with id studies
+ * CSS Specificity = 102 */
 section#studies div {
     display: flex;
     justify-content: center;
 }
 
+/* section experience styles */
+
+/* For div in section with id experience
+ * CSS Specificity = 102 */
 section#experience div {
     display: flex;
     justify-content: center;
 }
 
+/* section references styles */
+
+/* For div in section with id references
+ * CSS Specificity = 102 */
 section#references div {
     display: flex;
     justify-content: center;
 }
 
+/* footer styles */
+
+/* For footer
+ * CSS Specificity = 1 */
 footer {
     padding: 10px;
     background-color: var(--colorPrimary);
 }
 
+/* For div in footer
+ * CSS Specificity = 2 */
 footer div {
     display: flex;
     justify-content: center;
 }
+
+/* For p in div in footer
+ * CSS Specificity = 3 */
 footer div > p {
     padding: 10px;
     font-size: 17px;
     color: var(--white);
 }
 
+/* other styles */
+
+/* For div with id contentPortfolio
+ * CSS Specificity = 101 */
 div#contentPortfolio {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+/* For div with class projectCard
+ * CSS Specificity = 11 */
 div.projectCard {
     display: flex;
     flex-direction: column;
@@ -254,11 +367,15 @@ div.projectCard {
     transition: all .5s;
 }
 
+/* For div with class projectCard when the mouse is on it
+ * CSS Specificity = 21 */
 div.projectCard:hover {
     box-shadow: 0px 0px 3px 3px var(--gray);
     transition: all .5s;
 }
 
+/* For link in div with class projectCard
+ * CSS Specificity = 12 */
 div.projectCard a {
     display: flex;
     justify-content: flex-end;
@@ -268,32 +385,44 @@ div.projectCard a {
     transition: all .5s;
 }
 
+/* For link in div with class projectCard when the mouse is on it
+ * CSS Specificity = 22 */
 div.projectCard a:hover {
     color: var(--red);
     transition: all .5s;
 }
 
+/* For dd in the definition list, by to move left
+ * CSS Specificity = 2 */
 dl > dd {
     margin-left: 50px;
 }
 
+/* For heading 1
+ * CSS Specificity = 1 */
 h1 {
     margin: 10px;
     font-size: 30px;
     text-align: center;
 }
 
+/* For heading 2
+ * CSS Specificity = 1 */
 h2 {
     margin: 20px;
     font-size: 25px;
     text-align: center;
 }
 
+/* For heading 3
+ * CSS Specificity = 1 */
 h3 {
     font-size: 20px;
     text-align: left;
 }
 
+/* For class badge element
+ * CSS Specificity = 10 */
 .badge {
     margin: 5px;
     padding: 10px;
@@ -305,18 +434,24 @@ h3 {
     transition: all .5s;
 }
 
+/* For class badge element when the mouse is on it
+ * CSS Specificity = 20 */
 .badge:hover {
     transform: scale(1.1);
     box-shadow: 0px 0px 3px 3px var(--gray);
     transition: all .5s;
 }
 
+/* For div with id goToTop
+ * CSS Specificity = 101 */
 div#goToTop {
     visibility: hidden;
     margin: 10px;
     float: right;
 }
 
+/* For link in div with id goToTop
+ * CSS Specificity = 102 */
 div#goToTop > a {
     position: fixed;
     bottom: 0px;
@@ -331,6 +466,9 @@ div#goToTop > a {
     text-decoration: none;
     transition: all .5s;
 }
+
+/* For link in div with id goToTop when the mouse is on it
+ * CSS Specificity = 112 */
 div#goToTop > a:hover {
     transform: scale(1.1) rotate(360deg);
     box-shadow: 0px 0px 10px 5px var(--gray);
@@ -338,10 +476,16 @@ div#goToTop > a:hover {
 }
 
 @media only screen and (max-width: 860px) {
+    /* FOR MOBILE PHONE */
+
+    /* For div with id container
+     * CSS Specificity = 101 */
     div#container {
         display: block;
     }
 
+    /* For aside
+     * CSS Specificity = 102 */
     div#container > aside {
         grid-area: 1 / 1 / 2 / 3;
         padding: 10px 20px 10px 20px;
@@ -349,21 +493,29 @@ div#goToTop > a:hover {
         color: var(--white);
     }
 
+    /* For div in aside
+     * CSS Specificity = 103 */
     div#container > aside > div {
         position: static;
     }
 
+    /* For link in aside
+     * CSS Specificity = 103 */
     div#container > aside a {
         text-decoration: none;
         color: var(--white);
         transition: all .5s;
     }
 
+    /* For link in aside when the mouse is on it
+     * CSS Specificity = 113 */
     div#container > aside a:hover {
         color: var(--red);
         transition: all .5s;
     }
 
+    /* For div with id middle in div id container
+     * CSS Specificity = 202 */
     div#container > div#middle {
         grid-area: 2 / 1 / 6 / 3;
         margin-left: 50px;
@@ -371,16 +523,22 @@ div#goToTop > a:hover {
         padding: 10px;
     }
 
+    /* For div in div with id middle
+     * CSS Specificity = 203 */
     div#container > div#middle > div {
         display: block;
     }
 
+    /* For nav
+     * CSS Specificity = 1 */
     nav {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         background-color: var(--colorPrimary);
     }
 
+    /* For div in nav
+     * CSS Specificity = 2 */
     nav div {
         display: none;
         position: fixed;
@@ -388,14 +546,14 @@ div#goToTop > a:hover {
         right: 0px;
     }
 
+    /* For a in div in nav
+     * CSS Specificity = 3 */
     nav div > a {
         display: block;
     }
 
-    nav {
-        justify-content: flex-end;
-    }
-
+    /* For button with id toggleNavbar in nav
+     * CSS Specificity = 102 */
     nav button#toggleNavbar {
         display: block;
         width: 30px;
@@ -409,11 +567,15 @@ div#goToTop > a:hover {
         transition: all .5s;
     }
 
+    /* For button with id toggleNavbar in nav when the mouse is on it
+     * CSS Specificity = 112 */
     nav button#toggleNavbar:hover {
         border-radius: 10px;
         transition: all .5s;
     }
     
+    /* For button with id toggleNavbar in nav when the mouse is on click it
+     * CSS Specificity = 112 */
     nav button#toggleNavbar:active {
         background-color: var(--colorSecondary);
         border-radius: 7px;
