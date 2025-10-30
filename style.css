@@ -32,6 +32,24 @@
     to {transform: rotate(360deg);}
 }
 
+/* Animation by move elements, from right to left or from left to right */
+@keyframes moveRightToLeftElem {
+    from {transform: translate(5000px);}
+    to {transform: translate(0px);}
+}
+
+@keyframes moveLeftToRightElem {
+    from {transform: translate(-5000px);}
+    to {transform: translate(0px);}
+}
+
+/* Animation by fly simulate */
+@keyframes fly {
+    0% {transform: translate(100%, 100%);}
+    50% {transform: translate(0%);}
+    100% {transform: translate(100%, 100%);}
+}
+
 /* FOR ALL DEVICES */
 
 /* For all descendents of the elements
@@ -62,6 +80,12 @@ div#top {
 /* FOR DESKTOP */
 
 /* header styles */
+
+/* For div with id top element
+ * CSS Specificity = 101 */
+div#top {
+    animation: moveRightToLeftElem .5s 0s;
+}
 
 /* For header element
  * CSS Specificity = 1 */
@@ -152,6 +176,7 @@ div#container > aside {
     padding: 10px 20px 10px 20px;
     background-color: var(--colorSecondary);
     color: var(--white);
+    animation: moveLeftToRightElem .5s 0s;
 }
 
 /* For div in aside in div with id container
@@ -176,6 +201,14 @@ div#container > aside > div img#centralImage {
  * CSS Specificity = 214 */
 div#container > aside > div img#centralImage:hover {
     transform: scale(1.1);
+    transition: all .5s;
+}
+
+/* For img with id centralImage in div in aside in div with id container when the mouse is on click it
+ * CSS Specificity = 214 */
+div#container > aside > div img#centralImage:active {
+    transform: scale(2) translate(100%, 100%);
+    border: 3px solid var(--black);
     transition: all .5s;
 }
 
@@ -245,6 +278,7 @@ div#container > div#middle {
     margin-left: 50px;
     margin-right: 50px;
     padding: 10px;
+    animation: moveRightToLeftElem .5s 0s;
 }
 
 /* For div in div with id middle in div container
@@ -323,6 +357,7 @@ section#references div {
 footer {
     padding: 10px;
     background-color: var(--colorPrimary);
+    animation: moveRightToLeftElem .5s 0s;
 }
 
 /* For div in footer
@@ -371,6 +406,13 @@ div.projectCard {
  * CSS Specificity = 21 */
 div.projectCard:hover {
     box-shadow: 0px 0px 3px 3px var(--gray);
+    transition: all .5s;
+}
+
+/* For div with class projectCard when the mouse is on click it
+ * CSS Specificity = 21 */
+div.projectCard:active {
+    transform: scale(1.1);
     transition: all .5s;
 }
 
@@ -439,6 +481,13 @@ h3 {
 .badge:hover {
     transform: scale(1.1);
     box-shadow: 0px 0px 3px 3px var(--gray);
+    transition: all .5s;
+}
+
+/* For class badge element when the mouse is on click it
+ * CSS Specificity = 20 */
+.badge:active {
+    transform: scale(2);
     transition: all .5s;
 }
 
@@ -511,6 +560,14 @@ div#goToTop > a:hover {
      * CSS Specificity = 113 */
     div#container > aside a:hover {
         color: var(--red);
+        transition: all .5s;
+    }
+
+    /* For img with id centralImage in div in aside in div with id container when the mouse is on click it
+    * CSS Specificity = 214 */
+    div#container > aside > div img#centralImage:active {
+        transform: scale(1.5);
+        border: 3px solid var(--black);
         transition: all .5s;
     }
 

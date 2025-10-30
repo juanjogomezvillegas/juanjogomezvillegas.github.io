@@ -41,6 +41,12 @@ Other functions implemented in header is a two input select and one button.
 
 - **Disco mode activation button**. Is a simple button, with play icon, which triggers a css animation that rotate the image, the links and icons of the website, and triggers a other css animation that change background color the body every one second, *this in a similar to a disco or demonic possession*. **Warning! This CSS animation is not accessible**.
 
+### Tests
+
+- [Link to the page speed test in mobile](https://pagespeed.web.dev/analysis/https-juanjogomezvillegas-github-io/7nuixskvfz?form_factor=mobile)
+
+- [Link to the page speed test in Desktop](https://pagespeed.web.dev/analysis/https-juanjogomezvillegas-github-io/7nuixskvfz?form_factor=desktop)
+
 ### Link to the Figma project
 
 - [Link to the Figma project](https://www.figma.com/design/YGOC9lM9Tta7ZaZxtGI4Wu/P2_Hypermedia-project?t=SjOC2SzUwO2ZLg7A-1)
