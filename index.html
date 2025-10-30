@@ -5,6 +5,7 @@
         <meta name="author" content="Juan José Gómez Villegas">
         <meta name="description" content="Project 1. CV">
         <meta name="viewport" content="Width=device-Width,initial-scale=1">
+        <meta name="X-Frame-Options" content="DENY">
         <!-- title established with javascript -->
         <title></title>
         <link rel="icon" id="currentLanguage">
@@ -22,24 +23,24 @@
         <div id="top_page"></div>
 
         <!-- section top of web page -->
-        <div id="top">
+        <div id="top" role="section top">
             <!-- header of web page, with extra functions -->
-            <header>
-                <button id="modeDisco"><i class="fa fa-play"></i></button>
-                <select name="changeLang" id="selChangeLang">
+            <header role="header">
+                <button id="modeDisco" aria-label="button mode disco"><i class="fa fa-play"></i></button>
+                <select name="changeLang" aria-label="button change language" id="selChangeLang">
                     <option value="ca">Català</option>
                     <option value="es">Castellano</option>
                     <option value="en">English</option>
                     <option value="fr">Français</option>
                 </select>
-                <select name="changeTheme" id="selChangeTheme">
+                <select name="changeTheme" title="button change theme" id="selChangeTheme">
                     <option value="light">Light Theme (by default)</option>
                     <option value="dark">Dark Theme</option>
                     <option value="blood">Blood Theme</option>
                 </select>
             </header>
             <!-- navbar responsive of web page -->
-            <nav id="menu">
+            <nav id="menu" role="navigation bar">
                 <div>
                     <a class="elementmenu" id="itemPersInfo" href="#personalInfo">Personal Information</a>
                     <a class="elementmenu" id="itemLang" href="#languages">Languages</a>
@@ -50,17 +51,17 @@
                     <a class="elementmenu" id="itemPortfolio" href="#portfolio">Portfolio</a>
                     <a class="elementmenu" id="itemRef" href="#references">References</a>
                 </div>
-                <button id="toggleNavbar"><i class="fa fa-bars"></i></button>
+                <button id="toggleNavbar" title="button toggle navbar"><i class="fa fa-bars"></i></button>
             </nav>
         </div>
 
         <!-- section central content of web page -->
-        <div id="container">
+        <div id="container" role="main content">
             <!-- section aside of web page. with personal information, list of languages and a personal image -->
-            <aside>
+            <aside role="aside">
                 <div>
                     <img id="centralImage" src="images/img1.jpg" alt="personal image" title="personal image">
-                    <section id="personalInfo">
+                    <section id="personalInfo" role="personalInfo">
                         <article>
                             <h2>Personal Information</h2>
                             <!-- unordered list of personal information -->
@@ -76,7 +77,7 @@
                             </div>
                         </article>
                     </section>
-                    <section id="languages">
+                    <section id="languages" role="languages">
                         <article>
                             <h2>Languages</h2>
                             <!-- unordered list of languages -->
@@ -94,9 +95,9 @@
             </aside>
             
             <!-- section middle central content of web page -->
-            <div id="middle">
+            <div id="middle" role="middle main content">
                 <!-- section studies -->
-                <section id="studies">
+                <section id="studies" role="studies">
                     <article>
                         <h2>Studies</h2>
                         <!-- definition list of studies -->
@@ -118,7 +119,7 @@
                 </section>
 
                 <!-- section experience -->
-                <section id="experience">
+                <section id="experience" role="experience">
                     <article>
                         <h2>Experience</h2>
                         <!-- definition list of experience -->
@@ -136,7 +137,7 @@
                 <!-- section hobbies and skills -->
                 <div>
                     <!-- subsection hobbies -->
-                    <section id="hobbies">
+                    <section id="hobbies" role="hobbies">
                         <article>
                             <h2>Hobbies</h2>
                             <!-- group of links (badges) -->
@@ -149,7 +150,7 @@
                     </section>
                     
                     <!-- subsection skills -->
-                    <section id="skills">
+                    <section id="skills" role="skills">
                         <article>
                             <h2>Skills</h2>
                             <!-- group of links (badges) -->
@@ -187,7 +188,7 @@
                 </div>
 
                 <!-- section portfolio, is group elements of cards with information of a personal projects -->
-                <section id="portfolio">
+                <section id="portfolio" role="portfolio">
                     <article>
                         <h2>Portfolio</h2>
                         <div id="contentPortfolio">
@@ -197,7 +198,7 @@
                 </section>
 
                 <!-- section references -->
-                <section id="references">
+                <section id="references" role="references">
                     <article>
                         <h2>References</h2>
                         <!-- ordered list of references -->
@@ -214,11 +215,11 @@
         
         <!-- button by go to top of page -->
         <div id="goToTop">
-            <a href="#top_page" class="fa fa-arrow-up"></a>
+            <a href="#top_page" title="button go to top" class="fa fa-arrow-up"></a>
         </div>
 
         <!-- section footer of web page -->
-        <footer>
+        <footer role="footer">
             <div>
                 <p>Juan José Gómez Villegas &copy; 2025</p>
             </div>

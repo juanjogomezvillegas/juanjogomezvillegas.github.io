@@ -391,7 +391,7 @@ function arrayLinksSourceCode(link) {
     let links = new Array(4);
     
     for (i = 0; i < 4; i++) {
-        links[i] = `<a href="${ link }" target="_blank">${ texts[i] }</a>`;
+        links[i] = `<a href="${ link }" aria-label="${ texts[i] }" target="_blank">${ texts[i] }</a>`;
     }
 
     return links;
